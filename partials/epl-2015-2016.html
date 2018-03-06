@@ -1,0 +1,104 @@
+<div class="blog">
+		<div class="container">
+			<div class="blog-main">
+				<h3>EPL 2015-2016</h3>
+				<div class="blog-top">
+					<div class="col-md-12">
+						<div class="row">
+						
+						<div class="form-group">
+    <label for="email">Filter By  Name</label>
+    <input type="text" class="form-control" id="email" ng-model="searchteamname">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Filter By Year:</label>
+    <input type="text" class="form-control" id="pwd" ng-model="searchyear">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Filter By Score 1:</label>
+    <input type="text" class="form-control" id="pwd" ng-model="searchscore1.score1">
+  </div>
+    <div class="form-group">
+    <label for="pwd">Filter By Score 2:</label>
+    <input type="text" class="form-control" id="pwd" ng-model="searchscore1.score2">
+  </div>
+						
+						
+						</div>
+						 <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead class="cf">
+        			<tr>
+        				<th>Date</th>
+        				
+        				<th class="numeric">Team 1</th>
+						<th class="numeric">Score 1</th>
+						<th class="numeric"></th>
+						<th class="numeric">Score 2</th>
+        				<th class="numeric">Team 2</th>
+        				
+        				
+						<th class="numeric">Stats</th>
+        				
+        			</tr>
+        		</thead>
+        		<!-- <tbody>
+        			<tr>
+        				<td data-title="Date">Aug 8, 2015</td>
+        				<td data-title="Day">Play-Off um 1 Premierleague-Platz:</td>
+        				<td data-title="Team 1" class="numeric">Manchester United</td>
+        				<td data-title="Score" class="numeric">1</td>
+        				<td data-title="Score" class="numeric">0</td>
+        				<td data-title="Team 2" class="numeric">Tottenham Hotspur</td>
+        				
+        			</tr>
+        			
+        		</tbody> -->
+				
+				
+				
+				 <tbody ng-repeat='round in allrounds '>
+                            <tr ng-repeat="match in round.matches  | filter:searchteamname | filter:searchscore1.score1 | filter:searchscore1 | filter:searchyear">
+                                <td data-title="Date">
+                                    {{ match.date | date: "fullDate" }}
+                                    <hr>{{round.name}}
+                                </td>
+                                <td data-title="Team 1">
+                                    <a ng-href="#/team/{{ match.team1.code }}/{{ match.team1.key }}" title="View Team Statistics">{{ match.team1.name }}</a>
+                                    <br> Teamcode: "{{ match.team1.code }}"
+                                </td>
+								  <td data-title="Score 1">
+                                    <span>{{match.score1 }}</span><span ng-show="match.score1 === null">"Not Available Yet"</span>
+                                </td>
+								 <td data-title="vs">
+                                    vs
+                                </td>
+								 <td data-title="Score 2">
+                                    <span>{{match.score2 }}</span><span ng-show="match.score2 === null">"Not Available Yet"</span>
+                                </td>
+                                <td data-title="Team 2">
+                                    <a ng-href="#/team/{{ match.team2.code }}/{{ match.team2.key }}" title="View Team Statistics">{{ match.team2.name }}</a>
+                                    <br> Teamcode: "{{ match.team2.code }}"
+
+                                </td>
+                              
+                               
+								
+								
+                                <td data-title="stats"> <a ng-href='#/matchview/{{ match.date | date:"yyyyMMdd" }}/{{ match.team1.code }}/vs/{{ match.team2.code }}'>View single Match</a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+        	</table>
+        </div>
+					
+						
+						
+						</div>
+					
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>

@@ -1,0 +1,81 @@
+<div class="blog">
+		<div class="container">
+			<div class="blog-main">
+				
+				<div class="blog-top">
+					<div class="col-md-12">
+				
+					
+							 <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead class="cf">
+        			<tr>
+        				<th>Date</th>
+        				
+        				<th class="numeric">Team 1</th>
+						<th class="numeric">Score 1</th>
+						<th class="numeric"></th>
+						<th class="numeric">Score 2</th>
+        				<th class="numeric">Team 2</th>
+        				
+        				
+						
+        				
+        			</tr>
+        		</thead>
+        		
+				
+				
+				
+				 <tbody>
+                            <tr>
+                                <td data-title="Date">
+                                    {{ matchDate}}
+                                    <hr>{{roundname}}
+                                </td>
+                                <td data-title="Team 1">
+                                    {{ t1 }}
+                                    <br> Teamcode: "{{ c1 }}"
+                                </td>
+								  <td data-title="Score 1">
+                                    <span>{{s1 }}</span><span ng-show="s1 === null">"Not Available Yet"</span>
+                                </td>
+								 <td data-title="vs">
+                                    vs
+                                </td>
+								 <td data-title="Score 2">
+                                    <span>{{s2 }}</span><span ng-show="s22 === null">"Not Available Yet"</span>
+                                </td>
+                                <td data-title="Team 2">
+                                    {{ t2 }}
+                                    <br> Teamcode: "{{ t2 }}"
+
+                                </td>
+                              
+                               
+								
+                            </tr>
+
+                        </tbody>
+        	</table>
+        </div>
+					
+						</div>
+						
+							<div>
+            <h2 class="text-center wow zoomIn ng-binding" style="visibility: visible; animation-name: zoomIn;">{{winner}}</h2>
+        </div>
+						
+					
+					</div>
+					
+				</div>
+			
+				
+				
+				
+				
+			</div>
+			
+		</div>
+		
